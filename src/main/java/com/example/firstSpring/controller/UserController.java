@@ -1,4 +1,4 @@
-package com.example.firstSpring.controler;
+package com.example.firstSpring.controller;
 
 import com.example.firstSpring.dto.UserDTO;
 import com.example.firstSpring.repository.UserRepository;
@@ -48,7 +48,6 @@ public class UserController {
                     existingUser.setAddress(userDetails.getAddress());
                     existingUser.setEmail(userDetails.getEmail());
                     existingUser.setPhone(userDetails.getPhone());
-                    // Don't update taxes directly through this endpoint
                     UserDTO updatedUser = userRepository.save(existingUser);
                     return ResponseEntity.ok(updatedUser);
                 })
